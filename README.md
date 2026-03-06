@@ -13,4 +13,9 @@
 <h3>The Code</h3>
 <p>To actually solve this problem, I used a Monte Carlo simulation where the program follows the optimal strategy and calculates its win percentage over millions of games. The program is multithreaded to optimise runtime, and it exports the values into a CSV for later data interpretation.</p>
 <h3>The Result</h3>
+<p>The result shows that the answer to the question in the problem statement is 5. On average, you can expect to win a bit more than half of games played when you make the prediction 5 and if played perfectly. The results for the win percentages for the other streak prediction values are stored in the example 'results.csv' file.</p>
 <h2>Furhter Data Interpretation</h3>
+<p>When we plot the results of the Monte Carlo simulation, we can see that the results clearly follow a logistic decay function.</p>
+$$
+\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)
+$$
