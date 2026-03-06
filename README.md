@@ -19,6 +19,6 @@
 **The Cauchy-Schwarz Inequality**
 
 ```math
-\sigma(x) = \frac{1}{1 + e^{k(x-x0)}}
+f(x) = \frac{L}{1 + e^{-k(x-x_0)}}
 ```
 
