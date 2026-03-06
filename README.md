@@ -19,6 +19,6 @@
 **The Cauchy-Schwarz Inequality**
 
 ```math
-\left( f(x) \leq \left( 1/(1+e^x) \right)
+\sigma(x) = \frac{1}{1 + e^{k(x-x0)}}
 ```
 
