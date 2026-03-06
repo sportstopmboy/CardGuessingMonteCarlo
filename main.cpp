@@ -12,7 +12,7 @@
 // Declare and initialise constants which control game parameters.
 const short NUM_CARDS = 52;
 const short STREAK_TO_WIN = 26;
-const unsigned long NUM_GAMES = 100000000;
+const unsigned long NUM_GAMES = 100000000L;
 const short NUM_GAMES_DIGITS = floor(log10(NUM_GAMES));
 
 // Array which stores results in order for file output.
@@ -190,4 +190,5 @@ void worker()
         // Run the game for the ticket we just pulled and store result in array.
         results[streakToCalculate - 1] = playGame(streakToCalculate);
     }
+
 }
