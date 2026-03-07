@@ -31,7 +31,7 @@ P(B, R, S_{goal}) = 1
 ```math
 P(0, 0, S \lt S_{goal}) = 0
 ```
-
+<p></p>
 <p>Now for the actual game logic. As mentioned, our strategy is to always guess the color that has the most cards remaining. This gives us two scenarios:
   <h4>Scenario 1: We guess Black (because $B \ge R$)</h4>
 
