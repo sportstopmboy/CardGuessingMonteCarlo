@@ -24,8 +24,13 @@
   ```math
   P(B, R, S_{goal}) = 1
   ```
+
 <p>  
   <li><b>A Loss:</b> If the deck runs out of cards ($B = 0$ and $R = 0$) and your streak is less than the goal ($$S < S_{goal}$$), you have a 0% chance of winning.</li>
+
+  ```math
+  P(0, 0, S < S_{goal}) = 0
+  ```
 </p>
 
 
