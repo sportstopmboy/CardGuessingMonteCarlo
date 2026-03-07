@@ -19,11 +19,12 @@
 <p>Now, let us define a mathematical function, $P(B, R, S)$, which represents the probability of eventually winning the game from this specific state.</p>
 <p>Before we calculate the middle of the game, we define how the game mathematically ends:
   <li><b>A Win:</b> If your streak reaches your prediction (defined as $$S_{goal}$$), you have a 100% chance of winning from that point on.</li>
+</p>
 
   ```math
   P(B, R, S_{goal}) = 1
   ```
-  
+<p>  
   <li><b>A Loss:</b> If the deck runs out of cards ($B = 0$ and $R = 0$) and your streak is less than the goal ($$S < S_{goal}$$), you have a 0% chance of winning.</li>
 </p>
 
