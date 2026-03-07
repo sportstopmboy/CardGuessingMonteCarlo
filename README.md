@@ -6,9 +6,9 @@
 <h2>Solution</h2>
 <h3>The Strategy</h3>
 <p>The first step to solving this problem is finding the optimal strategy for playing this game. Although it seems like it's all up to chance, there is a way to get an edge (the effect of this edge is illustrated later). That edge is in guessing the color which has show up less until this point. Since the number of cards in limited, even if only one more red card has shown up thus far, it is more likely that the next card will be black. This means that the chance is not 50/50 each time, since each probability is affected by the previous result. The optimal strategy, therefore, is:
-<li>&nbspAs the first guess, pick a random color.</li>
-<li>If the card is black, your next guess is red; and vice versa.</li>
-<li>Repeat this process, where each guess is the color which has been seen less until this point. And if the count is equal, pick a card at random.</li></p>
+&nbsp<li>As the first guess, pick a random color.</li>
+&nbsp<li>If the card is black, your next guess is red; and vice versa.</li>
+&nbsp<li>Repeat this process, where each guess is the color which has been seen less until this point. And if the count is equal, pick a card at random.</li></p>
 <h3>The Model</h3>
 <p>To actually solve this problem, I modelled the problem as a Markov Chain. The model of the problem is as follows:</p>
 <h4>The State</h4>
