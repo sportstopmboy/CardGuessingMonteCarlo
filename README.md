@@ -35,9 +35,9 @@ P(B, R, S_{goal}) = 1
 P(0, 0, S \lt S_{goal}) = 0
 ```
 <p></p>
-<p>Now for the actual game logic. As mentioned, our strategy is to always guess the color that has the most cards remaining. This gives us two scenarios:
-<b>Scenario 1: We guess Black</b> (because $$B \ge R$$)</p>
-<p></p>The true next card drawn is completely random based on the exact ratio of the remaining cards.</p>
+<p>Now for the actual game logic. As mentioned, our strategy is to always guess the color that has the most cards remaining. This gives us two scenarios:</p>
+<h4>Scenario 1: We guess Black (because $$B \ge R$$)</h4>
+<p>The true next card drawn is completely random based on the exact ratio of the remaining cards.</p>
 
 <h3>The Result</h3>
 <p>The result shows that the answer to the question in the problem statement is 6. On average, you can expect to win a bit more than half of games played when you make the prediction 6 cards in a row and you play it perfectly. The results for the win percentages for the other streak prediction values are stored in the example 'markov_chain_results.csv' file.</p>
