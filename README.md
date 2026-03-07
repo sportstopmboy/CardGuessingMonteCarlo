@@ -37,13 +37,31 @@ P(0, 0, S \lt S_{goal}) = 0
 <p></p>
 <p>Now for the actual game logic. As mentioned, our strategy is to always guess the color that has the most cards remaining. This gives us two scenarios:</p>
 <h4>Scenario 1: We guess Black (because $$B \ge R$$)</h4>
-<p>The true next card drawn is completely random based on the exact ratio of the remaining cards.</p>
+<p>The true next card drawn is completely random based on the exact ratio of the remaining cards.
+  <li>You are <b>correct</b> with a probability of $\frac{B}{B+R}$. The black card is removed, and your streak goes up by 1.</li>
+  <li>You are <b>wrong</b> with a probability of $\frac{R}{B+R}$. A red card is removed, and your streak resets to 0.</li>
+</p>
+<p>Therefore, your overall probability of winning from this state is the sum of these two future possibilities multiplied by their exact odds:</p>
+
+```math
+P(B, R, S) = \left( \frac{B}{B+R} \times P(B-1, R, S+1) \right) + \left( \frac{R}{B+R} \times P(B, R-1, 0) \right)
+```
+
+<h4>Scenario 2: You guess Red (because $R > B$)</h4>
+<p>The exact same logic applies, but inverted:</p>
+
+```math
+P(B, R, S) = \left( \frac{R}{B+R} \times P(B, R-1, S+1) \right) + \left( \frac{B}{B+R} \times P(B-1, R, 0) \right)
+```
+
+<p></p>
+<p>The programming implementation of this model can be found in the <i>markovchain.cpp</i> file.</p>
 
 <h3>The Result</h3>
-<p>The result shows that the answer to the question in the problem statement is 6. On average, you can expect to win a bit more than half of games played when you make the prediction 6 cards in a row and you play it perfectly. The results for the win percentages for the other streak prediction values are stored in the example 'markov_chain_results.csv' file.</p>
+<p>The result shows that the answer to the question in the problem statement is <b>6</b>. On average, you can expect to win a bit more than half of games played when you make the prediction 6 cards in a row and you play it perfectly. The results for the win percentages for the other streak prediction values are stored in the <i>markov_chain_results.csv</i> file.</p>
 
 <h2>The Monte Carlo Simulation</h2>
-<p>I also wrote a Monte Carlo simulation to prove the result obtained was indeed correct. The Monte Carlo simulation simulated a player who follows the optimal strategy. This player counts its wins and and calculates its win percentage over millions of games. The program is multithreaded to optimise runtime, and it exports the values into a CSV for later data comparison and analysis.</p>
+<p>I also wrote a Monte Carlo simulation to prove the result obtained was indeed correct. The Monte Carlo simulation simulated a player who follows the optimal strategy. This player counts its wins and and calculates its win percentage over millions of games (the values here were derived from 100 million games for each streak). The program is multithreaded to optimise runtime, and it exports the values into a CSV for later data comparison and analysis. The Monte Carlo simulation showed that when more and more iterations are played, the win percentages converge to the theoretical values.</p>
 
 <h2>Further Data Interpretation</h2>
-<p>When we plot the results of the Monte Carlo simulation, we can see that the results clearly follow a logistic decay function.</p>
+<p>When we plot the win percentage results, we can see that the results clearly follow a logistic decay function. However they do not clearly map to any logistic function. As I learnt, this is due to this game being classified as a <b>Finite Combinatorial System</b>. This paired with the fact that we are counting cards gives us a mathematical advantage which "stretches" the tail of the logistic function.</p>
